@@ -1,0 +1,84 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+    public:
+    int data;
+    Node *next;
+
+    Node(int d)
+    {
+        data=d;
+        next=NULL;
+
+    }
+};
+
+Node *head;
+
+class solution
+{
+public:
+    Node *insert(int data,Node *head)
+    {
+        if (head==NULL)
+        {
+            head= new Node(data);
+        }
+        else
+        {
+            Node *present=head;
+            while (present->next!=NULL)
+                present=present->next;
+            present->next=new Node(data);
+        }
+        return head;
+    }
+    void reverse(Node *head)
+    {
+        Node *current,*next,*prev;
+        current=head;
+        prev=NULL;
+        while(current!=NULL)
+        {
+            next=current->next;
+            current->next=prev;
+            prev=current;
+            current=next;
+        }
+        head=prev;
+
+        Node *start=head;
+          while(start)
+          {
+              cout<<start->data<<" ";
+              start=start->next;
+          }
+
+    }
+
+
+};
+
+int main()
+{
+  int T;
+  cin>>T;
+  while(T--)
+  {
+      int N;
+      cin>>N;
+      Node *head=NULL;
+      solution object;
+      for (int i=0;i<N;i++)
+      {
+          int k;
+          cin>>k;
+          head=object.insert(k,head);
+      }
+      object.reverse(head);
+
+  }
+  return 0;
+}
