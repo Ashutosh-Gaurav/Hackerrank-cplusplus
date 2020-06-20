@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+    set<int> s;
+    int q;
+    cin>>q;
+    while(q--)
+    {
+        int query, value;
+        cin>>query>>value;
+        switch(query)
+        {
+        case 1:
+            s.insert(value);
+            break;
+        case 2:
+            s.erase(value);
+            break;
+        case 3:
+            cout<<(s.find(value)==s.end()?"No":"Yes")<<endl;
+                break;
+
+
+        }
+    }
+    return 0;
+}
+
+
+
