@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+    map<string,int> m;
+    int q;
+    cin>>q;
+    while(q--)
+    {
+        int query;
+        string key;
+        cin>>query>>key;
+        switch(query)
+        {
+        case 1:
+
+            int marks;
+            cin>>marks;
+            m[key]+=marks;
+            break;
+        case 2:
+            m.erase(key);
+            break;
+        case 3:
+            cout<<m[key]<<endl;
+            break;
+        }
+    }
+    return 0;
+}
+
+
+
